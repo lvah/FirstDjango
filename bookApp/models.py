@@ -40,6 +40,12 @@ class Hero(models.Model):
     def __str__(self):
         return self.name
 
+    def sex(self):
+        if self.gender:
+            return  "男"
+        else:
+            return  '女'
+
     # 自定义对应的表名，默认表名：bookApp_book
     class Meta:
         db_table = "heros"
