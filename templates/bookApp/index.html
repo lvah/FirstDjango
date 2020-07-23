@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+</head>
+<body>
+<ul>
+    {% for book in books %}
+        <li><a href="/book/{{ book.id }}/">{{ book.id }}-{{ book.title }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>

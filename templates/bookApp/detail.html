@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书详情页</title>
+</head>
+<body>
+<h1>图书名称: {{ book.title }}</h1>
+<h3>图书编号: {{ book.id }}</h3>
+<h3>图书发布日期: {{ book.pub_date }}</h3>
+<h3>图书人物信息: </h3>
+{% if book.hero_set.all %}
+    <ul>
+    {% for hero in book.hero_set.all %}
+        <li>{{ hero.name }}-{{ hero.content }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <h6 style="color: mediumvioletred">书籍{{ book.title }}没有人物信息</h6>
+{% endif %}
+</body>
+</html>
