@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    #
     path('admin/', admin.site.urls),
     # ^book以book开头的网址，如何处理呢? 查询bookAPP.urls里面的路由设置
-    path('book', include('bookApp.urls'))
+    path('book/', include('bookApp.urls'))
 ]
